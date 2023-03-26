@@ -18,7 +18,7 @@ Total of 17 modules except fsic architecture specification.
 * Validation FPGA Programming Guideline
 * WB_Axilite Implementation Specification
    
-## FSIC Architecture Specification
+# FSIC Architecture Specification
 Full-Stack IC (FSIC) is an IC validation system that trains a full-stack IC designer. A Full-stack IC designer can complete an IC product development with the skills of  IC design, FPGA design, and embedded programming. 
 This document defines the architecture for the IC validation platform, namely FSIC Test Architecture. In addition, it provides the following specifications
 - System Function Specification
