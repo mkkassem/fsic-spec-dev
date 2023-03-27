@@ -1,22 +1,28 @@
 # Implementation Specification for FSIC Modules
 Total of 17 modules except fsic architecture specification.
-* Aggregator Implementation Specification
-* Axilite_Axis (FPGA Axilite to Axis Conversion) Implementation Specification
-* Axim_Axis (FPGA Axim to Axis DMA - downstream) Implementation Specification
-* Axis_Axilite (host read write caravel module) Implementation Specification
-* Axis_Axim (FPGA Axis to Axim DMA - upstream) Implementation Specification
+
+**Carvel Chip**
+* WB_Axilite Implementation Specification
+* Axis_Axilite (host read write caravel module) 
 * Axis_Switch Implementation Specification
-* Caravel Chip Software Programming Guide
-* Clocking Implementation Specification
+* Aggregator Implementation Specification
 * Disaggregator Implementation Specification
-* FSIC-AXIS interface specification
 * IO_Serdes Implementation Specification
 * LogicAnalyzer Implementation Specification
 * Mailbox Implementation Specification - Exchange message between Caravel_RISC-V and FPGA
-* Power-on_Reset  Implementation Specification
 * Tester Implementation Specification
-* Validation FPGA Programming Guideline
-* WB_Axilite Implementation Specification
+
+**Validation FPGA**
+* Axilite_Axis (FPGA Axilite to Axis Conversion) Implementation Specification
+* Axim_Axis (FPGA Axim to Axis DMA - downstream) Implementation Specification
+* Axis_Axim (FPGA Axis to Axim DMA - upstream) Implementation Specification
+
+**System Specification**
+* Power-on_Reset  Implementation Specification
+* Clocking Implementation Specification
+* FSIC-AXIS interface specification
+* Caravel Chip Software Programming Guide
+* Validation FPGA Software Programming Guide
    
 # FSIC Architecture Specification
 Full-Stack IC (FSIC) is an IC validation system that trains a full-stack IC designer. A Full-stack IC designer can complete an IC product development with the skills of  IC design, FPGA design, and embedded programming. 
@@ -300,7 +306,6 @@ This defines memory map for FSIC IP implemented in user project wrapper and vali
 ### System Clocking Scheme
 Clocking scheme for IO serialization (IO_serdes) and user project interface searlization.
 
-
 ### Power-on and reset 
 Power-on and reset sequence and its control mechanism in the validation system of Caravel-FPGA
 
@@ -318,17 +323,12 @@ To facilitate integration and future enhancement. We will recommend the followin
 
 #### Automate the user-project wrapper integration process. 
 - Use standard naming for signals. There two type of naming: port name, and signal name. If the signal is user project specific, the interconnect signal is named as **portname_userid**. User id is predefined before design integration.
-- Develop a script to assembly and integrate user projects for wrapper module integration.
-- Aggregator, Disaggregate, Axi-Switch should adopt parameterized coding style. If use HLS, use C++ template coding. 
+- Develop a script to assembly and integrate user projects for wrapper module integration. 
 
+#### Coding style to allow for extension
+Aggregator, Disaggregate, Axi-Switch and other should adopt parameterized coding style. If use HLS, use C++ template coding. 
 
-## To Be Completed
-
-## Clocking - TBD
-
-
-## Power-on Reset - TBD
-
+## Others
 
 ## System Initialization Sequence
 1.	Reset Exit Sequence : FPGA -> Caravel
